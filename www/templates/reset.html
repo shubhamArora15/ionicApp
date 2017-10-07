@@ -1,0 +1,31 @@
+
+<ion-content>
+  <center>
+    <h1>
+    Reset Password
+  </h1>
+  </center>
+  <hr>
+  <div class="padding" style="text-align:center;">
+      Enter registered email .
+  </div>
+  <form>
+    <div class="list">
+       <div class="list list-inset inputBox ">
+        <label class="item item-input">
+          <input type="email" ng-model="loginData.email" placeholder="Enter registered Email" style="text-align: center;">
+        </label>
+      </div>
+      <hr>
+      <label class="row" style="border:none !important">
+        <button class="button button-block button-positive" ng-click = "resetPassword(loginData)">
+          Reset Password
+        </button>
+      </label>
+      <label class="row" style="border:none !important;">
+          <button class = "button button-block" ng-click = "next('signup')">Register here</button>.
+          <button class="button button-block" ng-click = "next('login')">login</button>
+      </label>
+    </div>
+  </form>
+</ion-content>

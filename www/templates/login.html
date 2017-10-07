@@ -1,0 +1,34 @@
+
+<ion-content>
+  <center>
+    <h1>Login</h1>
+  </center>
+  <hr>
+  <div class="padding" style="text-align:center;">
+      Enter your Credentilas to Log in.
+  </div>
+  <form>
+    <div class="list">
+       <div class="list list-inset inputBox ">
+        <label class="item item-input">
+          <input type="email" ng-model="loginData.email" placeholder="Enter Email" style="text-align: center;">
+        </label>
+      </div>
+      <div class="list list-inset inputBox ">
+        <label class="item item-input">
+          <input type="password" ng-model="loginData.password" placeholder="Password" style="text-align: center;">
+        </label>
+      </div>
+      <label class="item" style="border:none !important;">
+        <button class="button button-block button-positive" ng-click = "signin(loginData)">Log in</button>
+      </label>
+      <hr>
+      <label class="row" style="border:none !important;">
+          <button class = "button button-block" ng-click = "next('signup')">Register here</button>
+      </label>
+    </label>
+          <button class="button button-block" ng-click = "next('resetPassword')">Having trouble in login ? Reset Password</button>
+      </label>
+    </div>
+  </form>
+</ion-content>

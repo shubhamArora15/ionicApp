@@ -1,0 +1,43 @@
+<!-- <ion-header-bar >
+  <div class="buttons">
+    <button class="button button-clear" ng-click="closeLogin()">Close</button>
+  </div>
+</ion-header-bar> -->
+<ion-content>
+  <center><h1>
+    Sign Up</h1>
+  </center>
+<hr>
+  <form>
+    <div class="list">
+       <div class="list list-inset inputBox ">
+        <label class="item item-input">
+          <input type="email" ng-model="signupData.email" placeholder="Email" style="text-align: center;">
+        </label>
+      </div>
+      <div class="list list-inset inputBox ">
+        <label class="item item-input">
+          <input type="text" ng-model="signupData.name" placeholder="Enter Name" style="text-align: center;">
+        </label>
+      </div>
+      <div class="list list-inset inputBox ">
+        <label class="item item-input">
+          <input type="text" ng-model="signupData.phone" placeholder="Enter Phone" style="text-align: center;">
+        </label>
+      </div>
+      <div class="list list-inset inputBox ">
+        <label class="item item-input">
+          <input type="password" ng-model="signupData.password" placeholder="Password" style="text-align: center;">
+        </label>
+      </div>
+
+      <div class="g-recaptcha" data-sitekey="6LfqhzMUAAAAABnwScq72GKBfjQoq_U367QZ4wkY"></div>
+
+      <label class="item" style="border:none !important;">
+        <button class="button button-block button-positive" ng-click = "signUp(signupData)">Submit</button>
+          <!-- <button class = "button button-block" ng-click = "next('')">Register here</button>. -->
+          <button class="button button-block" ng-click = "next('login')">Already Member? login here</button>
+      </label>
+    </div>
+  </form>
+</ion-content>
