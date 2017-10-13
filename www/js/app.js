@@ -44,9 +44,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     templateUrl:'templates/login.html',
     controller: 'authanticCtrl'
   })
+  .state('reset', {
+    url: '/reset',
+    templateUrl:'templates/reset.html',
+    controller: 'authanticCtrl'
+  })
   .state('resetPassword', {
     url: '/resetPassword',
-    templateUrl:'templates/reset.html',
+    templateUrl:'templates/resetPassword.html',
     controller: 'authanticCtrl'
   });
 
