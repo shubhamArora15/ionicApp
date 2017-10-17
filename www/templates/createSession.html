@@ -1,0 +1,42 @@
+
+<ion-content>
+  <center>
+    <h1>Create Session</h1>
+    <a ng-click = "logout()">Logut</a>
+    <a ng-click = "next('home')">Back to home</a>
+  </center>
+  <hr>
+  <div class="padding" style="text-align:center;">
+      Enter Details
+  </div>
+  <form>
+    <div class="list">
+       <div class="list list-inset inputBox ">
+        <label class="item item-input">
+          <input type="text" ng-model="session.name" placeholder="Enter Session Name" style="text-align: center;">
+        </label>
+      </div>
+      <div class="list list-inset inputBox">
+        <label for="photo1">Add image 1:</label>
+        <input id="photo1" type="file"
+       class="form-control" name="myFile"
+        ng-model = "photos">
+      </div>
+      <div class="list list-inset inputBox">
+        <label for="photo2">Add image 2:</label>
+        <input id="photo2" type="file"
+         name="photo2" class="form-control"
+        ng-model = "photos">
+      </div>
+      <div class="list list-inset inputBox">
+        <label for="photo3">Add Image 3:</label>
+        <input id="photo3" type="file"
+         name="photo3" class="form-control"
+        ng-model = "photos">
+      </div>
+    </label>
+          <button class="button button-block" ng-click = "createSession(session, photos)">Create Session</button>
+      </label>
+    </div>
+  </form>
+</ion-content>

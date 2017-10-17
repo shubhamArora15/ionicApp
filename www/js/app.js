@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'firebase'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'firebase', 'ngCordova', 'btford.socket-io'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -21,6 +21,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       StatusBar.styleDefault();
     }
   });
+})// Socket-IO
+.factory('socket',function (socketFactory) {
+  var myIoSocket = io.connect('http://basicapp.arorashubham.com');
+  // var myIoSocket = io.connect('http://192.168.0.101:3000');
+  mySocket = socketFactory({
+    ioSocket: myIoSocket
+  });
+
+  return mySocket;
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -39,6 +48,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     templateUrl:'templates/signup.html',
     controller: 'authanticCtrl'
   })
+  .state('home', {
+      url: '/home',
+      templateUrl:'templates/home.html',
+      controller: 'authanticCtrl'
+    })
+    .state('createSession', {
+      url: '/createSession',
+      templateUrl:'templates/createSession.html',
+      controller: 'authanticCtrl'
+    })
+    .state('viewSession', {
+      url: '/viewSession',
+      templateUrl:'templates/viewSession.html',
+      controller: 'authanticCtrl'
+    })
   .state('login', {
     url: '/',
     templateUrl:'templates/login.html',

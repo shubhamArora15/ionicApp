@@ -1,0 +1,27 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Data</h1>
+  </ion-header-bar>
+  <ion-content>
+
+      <b>{{sessionName}}</b><br>
+      is loading images..
+
+{{photos}}
+      <ion-slide-box >
+        <ion-slide ng-repeat = "image in photos">
+            <!-- {{image}} -->
+          <img ng-src="{{'http://localhost:3000/images/'}}";
+           ng-if = "split(image) == 'jpeg' || split(image) == 'jpg' || split(image) == 'png' " alt="Nothing found" />
+
+           <video src="{{'http://localhost:3000/images/'}}" ng-if = "split(image) == 'mp4'"  controls>
+           </video>
+
+           <audio ng-if = "split(image) == 'mp3'" controls>
+                  <source ng-src="{{'http://localhost:3000/images/def.mp3'}}" >
+           </audio>
+        </ion-slide>
+      </ion-slide-box>
+
+  </ion-content>
+</ion-modal-view>

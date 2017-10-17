@@ -1,0 +1,15 @@
+
+<ion-content>
+  <center>
+    <h1>Home</h1>
+  </center>
+  <hr>
+  <div class="padding" style="text-align:center;">
+      Welcome! {{name}}. <a ng-click = "logout()">Logut</a>
+  </div>
+  <div class="">
+      <a ng-click = "next('createSession')">Create Session</a>
+      <a ng-click = "next('viewSession')">View session</a>
+      <a ng-click = "scanBarcode()">Open scanner</a>
+  </div>
+  </ion-content>

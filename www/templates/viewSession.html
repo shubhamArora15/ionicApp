@@ -1,0 +1,15 @@
+<ion-content>
+  <div class="list" ng-init = "viewSession()">
+    <center><h1>All sessions</h1></center>
+    <a ng-click = "logout()">Logut</a>
+
+    <a ng-click = "next('home')">Back to home</a>
+    <hr>
+  		<a class="item item-button-right" ng-click = "getSessionData(session._id)" id="sessionList"
+      style="cursor:pointer;background: rgba(239, 236, 236, 0.270588);margin:0px 10px 10px 10px !important;" ng-repeat="session in sessionList">
+  			<h2> >>> {{session.session}}</h2>
+  	   </a>
+    <hr>
+    </a>
+  </div>
+</ion-content>
