@@ -143,21 +143,25 @@ angular.module('starter.controllers', [])
 
   $scope.scanBarcode = function() {
        $cordovaBarcodeScanner.scan().then(function(imageData) {
-           alert(imageData.text);
-           $scope.imageText = imageData.text;
-           console.log("Barcode Format -> " + imageData.format);
+          if(imageData==undefined || imageData.text == undefined || imageData.text == ""){
 
-               $http.post($scope.host + '/checkSession', {sessionId:imageData.text, checkSession:true})
-                 .then(function(response){
-                     console.log(response.data, "done");
-                     socket.emit('sessionData', {
-                        sessionId : $scope.imageText
-                      });
-                 });
-           console.log("Cancelled -> " + imageData.cancelled);
-       }, function(error) {
-           console.log("An error happened -> " + error);
-       });
+          }else{
+             alert(imageData.text);
+             $scope.imageText = imageData.text;
+             console.log("Barcode Format -> " + imageData.format);
+
+                 $http.post($scope.host + '/checkSession', {sessionId:imageData.text, checkSession:true})
+                   .then(function(response){
+                       console.log(response.data, "done");
+                       socket.emit('sessionData', {
+                          sessionId : $scope.imageText
+                        });
+                   });
+             console.log("Cancelled -> " + imageData.cancelled);
+           }
+         }, function(error) {
+             console.log("An error happened -> " + error);
+         });
    };
 
   $scope.createSession = function(session, photos){
