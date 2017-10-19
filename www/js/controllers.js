@@ -40,6 +40,15 @@ angular.module('starter.controllers', [])
       });
   };
 
+  // function to process the form
+  $scope.viewSessionList = function(){
+    console.log("done");
+    socket.emit('sessionList', {
+       sessionList : "view"
+     });
+  };
+
+
   /**
   Password Reset section
   */

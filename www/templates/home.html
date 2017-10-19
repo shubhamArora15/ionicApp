@@ -8,8 +8,27 @@
       Welcome! {{name}}. <a ng-click = "logout()">Logut</a>
   </div>
   <div class="">
-      <a ng-click = "next('createSession')">Create Session</a>
-      <a ng-click = "next('viewSession')">View session</a>
-      <a ng-click = "scanBarcode()">Open scanner</a>
+  <!-- /    <a ng-click = "next('createSession')">Create Session</a> -->
+      <button class="button button-block button-positive" ng-click = "next('createSession')">
+        Create session
+      </button>
+      <br>
+      <button class="button button-block" ng-click = "next('viewSession')">
+        View Session
+      </button>
+
+      <br>
+      <button class="button button-block button-positive" ng-click = "scanBarcode()">
+        Create session
+      </button>
+
+      <!-- <a >Open scanner</a> -->
+      <br>
+
+      <button class="button button-block" ng-click = "viewSessionList()">
+        View Sessions on web
+      </button>
+      <!-- <a >View Session List</a> -->
+      <br>
   </div>
   </ion-content>
