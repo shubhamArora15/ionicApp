@@ -24,7 +24,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 })// Socket-IO
 .factory('socket',function (socketFactory) {
   var myIoSocket = io.connect('http://basicapp.arorashubham.com');
-  // var myIoSocket = io.connect('http://192.168.0.101:3000');
+  // var myIoSocket = io.connect('http://192.168.43.166:3000');
   mySocket = socketFactory({
     ioSocket: myIoSocket
   });

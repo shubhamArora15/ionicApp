@@ -9,6 +9,7 @@
   <allow-navigation href="http://192.168.0.115:8100"/>
   <allow-navigation href="http://192.168.0.107:8100"/>
   <allow-navigation href="http://192.168.0.101:8100"/>
+  <allow-navigation href="http://192.168.43.166:8100"/>
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
   <allow-intent href="tel:*"/>

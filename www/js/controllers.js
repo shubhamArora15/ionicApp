@@ -5,7 +5,7 @@ angular.module('starter.controllers', [])
   /**
   Log in Section
   */
-  var hosts = ["http://basicapp.arorashubham.com","http://localhost:3000",'http://192.168.0.101:3000'];
+  var hosts = ["http://basicapp.arorashubham.com","http://localhost:3000",'http://192.168.43.166:3000'];
   $scope.host = hosts[0];
 
   $scope.name = localStorage.getItem('name');
@@ -135,13 +135,14 @@ angular.module('starter.controllers', [])
   $scope.scanBarcode = function() {
        $cordovaBarcodeScanner.scan().then(function(imageData) {
            alert(imageData.text);
+           $scope.imageText = imageData.text;
            console.log("Barcode Format -> " + imageData.format);
 
                $http.post($scope.host + '/checkSession', {sessionId:imageData.text, checkSession:true})
                  .then(function(response){
                      console.log(response.data, "done");
                      socket.emit('sessionData', {
-                        sessionId : "done"
+                        sessionId : $scope.imageText
                       });
                  });
            console.log("Cancelled -> " + imageData.cancelled);
